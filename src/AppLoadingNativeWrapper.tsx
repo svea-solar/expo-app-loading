@@ -1,5 +1,5 @@
-import * as SplashScreen from 'expo-splash-screen';
-import React from 'react';
+import * as SplashScreen from "expo-splash-screen";
+import React from "react";
 
 type Props = {
   autoHideSplash?: boolean;
@@ -12,7 +12,7 @@ export default class AppLoading extends React.Component<Props> {
 
   constructor(props: Props) {
     super(props);
-    SplashScreen.preventAutoHideAsync();
+    SplashScreen.preventAutoHideAsync().catch(() => {});
   }
 
   componentWillUnmount() {
